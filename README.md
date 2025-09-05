@@ -56,7 +56,7 @@ npm start
 
 📝 Usage
 
-Register as a Patient or Doctor
+Register as a Patient or Login as both   //=> Doctor can only be registered directly in data base by admin due to security reasons.
 
 Login to access role-specific features
 
