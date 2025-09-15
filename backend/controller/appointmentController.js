@@ -7,17 +7,17 @@ export const getAppointments = async (req, res) => {
     if (req.user.role === "patient") {
       // patient sees only their appointments
       appointments = await Appointment.find({ patient: req.user._id })
-        .populate("doctor", "name email specialization")
+        .populate("doctor", "name email  specialization")
         .populate("patient", "name email");
     } else if (req.user.role === "doctor") {
       // doctor sees only their appointments
       appointments = await Appointment.find({ doctor: req.user._id })
-        .populate("doctor", "name email specialization")
+        .populate("doctor", "name email  specialization")
         .populate("patient", "name email");
     } else {
       // admin or other roles can see all appointments
       appointments = await Appointment.find()
-        .populate("doctor", "name email specialization")
+        .populate("doctor", "name email  specialization")
         .populate("patient", "name email");
     }
 
